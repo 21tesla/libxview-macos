@@ -1,0 +1,1 @@
+gcc  -dynamiclib   -arch x86_64 ../src/*.o -o libolgx.dylib -L/opt/X11/lib/ -lX11

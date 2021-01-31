@@ -1,0 +1,4 @@
+cp ../../libxview/lib/libxview.dylib . 
+cp ../../libolgx/lib/libolgx.dylib . 
+
+gcc textedit.c -o textedit -w -DSTANDALONE -I. -I../../libxview/include -I/opt/X11/include -L/opt/X11/lib -L. -lX11 -lX11 -lxview -lolgx

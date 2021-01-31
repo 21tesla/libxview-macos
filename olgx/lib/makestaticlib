@@ -1,0 +1,1 @@
+libtool -static  -o libolgx.a ../src/*.o 

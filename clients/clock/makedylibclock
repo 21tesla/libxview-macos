@@ -1,0 +1,4 @@
+cp ../../xview/lib/libxview.dylib . 
+cp ../../olgx/lib/libolgx.dylib . 
+
+gcc clock.c -o clock -w -DNO_LIB_DESKSET -I. -I../../xview/include -I/opt/X11/include -L/opt/X11/lib -L. -lX11 -lxview -lolgx

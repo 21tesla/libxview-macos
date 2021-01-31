@@ -1,0 +1,2 @@
+
+gcc  -dynamiclib -arch x86_64   -o libxview.dylib ../src/*.o -L/opt/X11/lib/ -L../../olgx/lib -lolgx -lX11 

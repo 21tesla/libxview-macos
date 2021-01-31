@@ -1,0 +1,3 @@
+gcc textedit.c  -o textedit -isysroot /Developer/SDKs/MacOSX10.6.sdk  -arch i386 \
+-L/usr/openwin/lib -I/usr/openwin/include -L/usr/X11R6/lib \
+-lxview -lolgx  -lX11 -DNO_LIB_DESKSET -D__linux__ -DSTANDALONE 
