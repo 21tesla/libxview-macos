@@ -756,22 +756,25 @@ server_init(parent, server_public, avlist)
 
 
 #ifdef __APPLE__
-   (void) fprintf( stderr, "using XAllocID for MacOS \n" );
+
+    (void) fprintf( stderr, "using xidLIst \n" );
+
+    XAllocIDs((Display *)server->xdisplay, xidList, 4 );   
+    
+    /* XAllocIDs ((Display *)server->xdisplay, server->atom_mgr, 4); */
+    
+    server->atom_mgr[ATOM] = xidList[0];
+    server->atom_mgr[NAME] = xidList[1]; 
+    server->atom_mgr[TYPE] = xidList[2];
+    server->atom_mgr[DATA] = xidList[3]; 
+
+#else
+    (void) fprintf( stderr, "using XAllocID \n" );
     server->atom_mgr[ATOM] = (XID) XAllocID((Display *)server->xdisplay);
     server->atom_mgr[NAME] = (XID) XAllocID((Display *)server->xdisplay);
     server->atom_mgr[TYPE] = (XID) XAllocID((Display *)server->xdisplay);
     server->atom_mgr[DATA] = (XID) XAllocID((Display *)server->xdisplay);
 
-#else
-    (void) fprintf( stderr, "using xidLIst \n" );
-
-    XAllocIDs( server->xdisplay, xidList, 4 );
-
-    server->atom_mgr[ATOM] = xidList[0];
-    server->atom_mgr[NAME] = xidList[1]; 
-    server->atom_mgr[TYPE] = xidList[2];
-    server->atom_mgr[DATA] = xidList[3];
- 
 #endif
 
     /* Key for XV_KEY_DATA.  Used in local dnd ops. */
