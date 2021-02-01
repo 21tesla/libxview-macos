@@ -755,11 +755,11 @@ server_init(parent, server_public, avlist)
 /* Delaglio */
 
 
-#ifdef __APPLE__
+#ifndef __APPLE__
 
     (void) fprintf( stderr, "using xidLIst \n" );
 
-    XAllocIDs((Display *)server->xdisplay, xidList, 4 );   
+    XAllocIDs((Display *)server->xdisplay, xidList, 4 );  
     
     /* XAllocIDs ((Display *)server->xdisplay, server->atom_mgr, 4); */
     
