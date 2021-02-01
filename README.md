@@ -10,6 +10,7 @@ The libraries compile with no errors. However, any binary built from libxview, l
 
 using XAllocID for MacOS
 Assertion failed: (ret != inval_id), function _XAllocID, file xcb_io.c, line 520.
+```
 
 To make libxview and libolgx:
 
