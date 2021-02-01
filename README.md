@@ -13,12 +13,15 @@ Assertion failed: (ret != inval_id), function _XAllocID, file xcb_io.c, line 520
 ```
 
 To make libxview and libolgx:
-
+```
 (1) enter xview/src and "make"
 (2) enter xview/lib and "makedylib"
 (3) enter olgx/src  and "make"
 (4) enter olgx/lib  and "makedylib"
+```
 
 To make the clock application
+```
 (1) enter clients/clock and "makedylibclock"
 (2) ./clock
+```
